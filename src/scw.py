@@ -11,6 +11,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QIcon, QPixmap, QPalette
 
+
 def make_window(filename):
     desktop = QDesktopWidget()
     avail_geom = desktop.availableGeometry()
@@ -61,8 +62,11 @@ def make_window(filename):
 
     return window
 
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Load image, select region, and convert to text.')
+    parser = argparse.ArgumentParser(
+        description='Load image, select region, and convert to text.')
+
     parser.add_argument('inputfile')
 
     args = parser.parse_args()
@@ -75,4 +79,3 @@ if __name__ == '__main__':
     # exit and pass exit code from Qt application
     exit_code = app.exec_()
     sys.exit(exit_code)
-
